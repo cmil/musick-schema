@@ -115,7 +115,9 @@
   <define name="track">
     <element name="track">
       <attribute name="number"/>
-      <attribute name="length"/>
+      <optional>
+        <attribute name="length"/>
+      </optional>
       <ref name="title"/>
       <ref name="common-elements"/>
     </element>
