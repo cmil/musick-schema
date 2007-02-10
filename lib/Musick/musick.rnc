@@ -1,0 +1,33 @@
+# $Id$
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+start = disc
+disc =
+  element disc {
+    attribute id { text },
+    attribute number { text },
+    attribute tracks { text },
+    (title & year & label & tracks & common-elements)
+  }
+common-elements =
+  composer? & artists? & comments? & genre? & id3-tope? & id3-tit3?
+title = element title { text }
+year = element year { text }
+label = element label { text }
+composer = element composer { text }
+artists = element artists { text }
+comments = element comments { text }
+genre = element genre { text }
+# ID3 original performer
+id3-tope = element id3-tope { text }
+# ID3 subtitle
+id3-tit3 = element id3-tit3 { text }
+tracks = element tracks { track+ }
+track =
+  element track {
+    attribute number { text },
+    attribute length { text }?,
+    title,
+    common-elements
+  }
