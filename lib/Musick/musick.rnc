@@ -1,33 +1,75 @@
-# $Id$
-
+default namespace = "http://hashtable.de/ns/musick"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 
-start = disc
+start = album
+album =
+  element album {
+    (title
+     & year
+     & label
+     & artist-elements*
+     & # deprecated
+       artists?
+     & comment*
+     & composer?),
+    opus+,
+    tracks
+  }
+opus =
+  element opus {
+    attribute track { text }?,
+    (opus-content),
+    part*
+  }
+opus-content =
+  attribute track { text }?,
+  title,
+  element number { text }?,
+  composer?,
+  artist*,
+  # deprecated
+  artists?,
+  comment*
+part =
+  element part {
+    attribute track { text }?,
+    (title
+     & artist*
+     & # deprecated
+       artists?
+     & comment*),
+    part*
+  }
+tracks = element tracks { disc+ }
 disc =
   element disc {
-    attribute id { text },
-    attribute number { text },
-    attribute tracks { text },
-    (title & year & label & tracks & common-elements)
+    attribute id { text }?,
+    attribute number { text }?,
+    attribute tracks { text }
+    # deprecated
+    ?,
+    track+
   }
-common-elements =
-  composer? & artists? & comments? & genre? & id3-tope? & id3-tit3?
+track =
+  element track {
+    attribute id { text },
+    attribute number { text }?,
+    attribute length { text }?
+  }
 title = element title { text }
 year = element year { text }
 label = element label { text }
 composer = element composer { text }
 artists = element artists { text }
-comments = element comments { text }
-genre = element genre { text }
-# ID3 original performer
-id3-tope = element id3-tope { text }
-# ID3 subtitle
-id3-tit3 = element id3-tit3 { text }
-tracks = element tracks { track+ }
-track =
-  element track {
-    attribute number { text },
-    attribute length { text }?,
-    title,
-    common-elements
+comment =
+  element comment {
+    attribute class { text }?,
+    text
   }
+genre = element genre { text }
+artist-elements = artist | conductor | orchestra | choir | ensemble
+artist = element artist { text }
+conductor = element conductor { text }
+orchestra = element orchestra { text }
+choir = element choir { text }
+ensemble = element ensemble { text }
