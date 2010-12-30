@@ -8,36 +8,30 @@ album =
      & year
      & label
      & artist-elements*
-     & # deprecated
-       artists?
      & comment*
-     & composer?),
+     & composer?
+     & genre?),
     opus+,
     tracks
   }
 opus =
   element opus {
     attribute track { text }?,
-    (opus-content),
+    opus-content,
     part*
   }
 opus-content =
-  attribute track { text }?,
-  title,
-  element number { text }?,
-  composer?,
-  artist*,
-  # deprecated
-  artists?,
-  comment*
+  attribute track { text }?
+  & title
+  & element number { text }?
+  & composer?
+  & genre?
+  & artist-elements*
+  & comment*
 part =
   element part {
     attribute track { text }?,
-    (title
-     & artist*
-     & # deprecated
-       artists?
-     & comment*),
+    (title & artist-elements* & comment*),
     part*
   }
 tracks = element tracks { disc+ }
