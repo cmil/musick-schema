@@ -50,9 +50,6 @@
 
   <define name="opus-content">
     <interleave>
-      <optional>
-        <attribute name="track"/>
-      </optional>
       <ref name="title"/>
       <optional>
         <element name="number">

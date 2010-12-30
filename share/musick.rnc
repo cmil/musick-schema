@@ -21,8 +21,7 @@ opus =
     part*
   }
 opus-content =
-  attribute track { text }?
-  & title
+  title
   & element number { text }?
   & composer?
   & genre?
