@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<a:addon xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:a="http://www.xmlmind.com/xmleditor/schema/addon"
+         location="http://hashtable.de/xxe/musick_config.zip">
+
+  <a:category>
+    <a:configuration />
+  </a:category>
+
+  <a:name>Musick configuration</a:name>
+
+  <a:version>0.01</a:version>
+
+  <a:author>
+    Carsten Milling
+    <a href="mailto:cmil@hashtable.de">cmil@hashtable.de</a>
+  </a:author>
+
+  <a:abstract>
+  </a:abstract>
+
+</a:addon>
