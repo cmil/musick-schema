@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+         xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         ns="http://hashtable.de/ns/musick">
+
+  <start>
+    <choice>
+      <ref name="album"/>
+    </choice>
+  </start>
+
+  <define name="album">
+    <element name="album">
+      <interleave>
+        <ref name="title"/>
+        <ref name="year"/>
+        <ref name="label"/>
+        <zeroOrMore>
+          <ref name="artist-elements"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="comment"/>
+        </zeroOrMore>
+        <optional>
+          <ref name="composer"/>
+        </optional>
+        <optional>
+          <ref name="genre"/>
+        </optional>
+      </interleave>
+      <oneOrMore>
+        <ref name="opus"/>
+      </oneOrMore>
+      <ref name="tracks"/>
+    </element>
+  </define>
+
+  <define name="opus">
+    <element name="opus">
+      <optional>
+        <attribute name="track"/>
+      </optional>
+      <ref name="opus-content"/>
+      <zeroOrMore>
+        <ref name="part"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="opus-content">
+    <interleave>
+      <ref name="title"/>
+      <optional>
+        <element name="number">
+          <text/>
+        </element>
+      </optional>
+      <optional>
+        <ref name="composer"/>
+      </optional>
+      <optional>
+        <ref name="genre"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="artist-elements"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="comment"/>
+      </zeroOrMore>
+    </interleave>
+  </define>
+
+  <define name="part">
+    <element name="part">
+      <optional>
+        <attribute name="track"/>
+      </optional>
+      <interleave>
+        <ref name="title"/>
+        <zeroOrMore>
+          <ref name="artist-elements"/>
+        </zeroOrMore>
+        <zeroOrMore>
+          <ref name="comment"/>
+        </zeroOrMore>
+      </interleave>
+      <zeroOrMore>
+        <ref name="part"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="tracks">
+    <element name="tracks">
+      <oneOrMore>
+        <ref name="disc"/>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="disc">
+    <element name="disc">
+      <optional>
+        <attribute name="id"/>
+      </optional>
+      <optional>
+        <attribute name="number"/>
+      </optional>
+      <optional>
+        <attribute name="tracks"/><!-- deprecated -->
+      </optional>
+      <oneOrMore>
+        <ref name="track"/>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="track">
+    <element name="track">
+      <attribute name="id"/>
+      <optional>
+        <attribute name="number"/>
+      </optional>
+      <optional>
+        <attribute name="length"/>
+      </optional>
+    </element>
+  </define>
+
+  <define name="title">
+    <element name="title">
+      <text/>
+    </element>
+  </define>
+
+  <define name="year">
+    <element name="year">
+      <text/>
+    </element>
+  </define>
+
+  <define name="label">
+    <element name="label">
+      <text/>
+    </element>
+  </define>
+
+  <define name="composer">
+    <element name="composer">
+      <text/>
+    </element>
+  </define>
+
+  <define name="artists">
+    <element name="artists">
+      <text/>
+    </element>
+  </define>
+
+  <define name="comment">
+    <element name="comment">
+      <optional>
+        <attribute name="class"/>
+      </optional>
+      <text/>
+    </element>
+  </define>
+
+  <define name="genre">
+    <element name="genre">
+      <text/>
+    </element>
+  </define>
+
+  <define name="artist-elements">
+    <choice>
+      <ref name="artist"/>
+      <ref name="conductor"/>
+      <ref name="orchestra"/>
+      <ref name="choir"/>
+      <ref name="ensemble"/>
+    </choice>
+  </define>
+
+  <define name="artist">
+    <element name="artist">
+      <text/>
+    </element>
+  </define>
+
+  <define name="conductor">
+    <element name="conductor">
+      <text/>
+    </element>
+  </define>
+
+  <define name="orchestra">
+    <element name="orchestra">
+      <text/>
+    </element>
+  </define>
+
+  <define name="choir">
+    <element name="choir">
+      <text/>
+    </element>
+  </define>
+
+  <define name="ensemble">
+    <element name="ensemble">
+      <text/>
+    </element>
+  </define>
+
+</grammar>

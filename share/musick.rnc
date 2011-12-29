@@ -1,0 +1,68 @@
+default namespace = "http://hashtable.de/ns/musick"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+start = album
+album =
+  element album {
+    (title
+     & year
+     & label
+     & artist-elements*
+     & comment*
+     & composer?
+     & genre?),
+    opus+,
+    tracks
+  }
+opus =
+  element opus {
+    attribute track { text }?,
+    opus-content,
+    part*
+  }
+opus-content =
+  title
+  & element number { text }?
+  & composer?
+  & genre?
+  & artist-elements*
+  & comment*
+part =
+  element part {
+    attribute track { text }?,
+    (title & artist-elements* & comment*),
+    part*
+  }
+tracks = element tracks { disc+ }
+disc =
+  element disc {
+    attribute id { text }?,
+    attribute number { text }?,
+    attribute tracks { text }
+    # deprecated
+    ?,
+    track+
+  }
+track =
+  element track {
+    attribute id { text },
+    attribute number { text }?,
+    attribute length { text }?
+  }
+title = element title { text }
+year = element year { text }
+label = element label { text }
+composer = element composer { text }
+artists = element artists { text }
+comment =
+  element comment {
+    attribute class { text }?,
+    text
+  }
+genre = element genre { text }
+artist-elements = artist | conductor | orchestra | choir | ensemble
+artist = element artist { text }
+conductor = element conductor { text }
+orchestra = element orchestra { text }
+choir = element choir { text }
+ensemble = element ensemble { text }

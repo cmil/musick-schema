@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+* { display: block; }
+
+*:before,
+*:after {
+  color: gray;
+}
+
+artist:before,
+conductor:before,
+ensemble:before,
+orchestra:before,
+choir:before,
+year:before,
+genre:before,
+label:before,
+xxx:before {
+  content: element-label() ": ";
+  font-weight: bold;
+}
+
+album {
+  padding-bottom: 3em;
+}
+
+title { font-weight: bold; }
+
+album > title {
+  font-size: 200%;
+  margin: .5em 0 1em 0;
+  text-align: center;
+}
+
+opus > title {
+  font-size: 130%;
+}
+
+opus {
+  margin: 1em 0;
+}
+
+part {
+  margin: .3em 0 .3em 2em;
+}
+
+tracks:before {
+  content: element-label();
+  font-weight: bold;
+  font-size: 140%;
+  display: block;
+  margin: 3em 0 .2em;
+}
+
+tracks > disc {
+  display: block;
+  collapsible: yes;
+  not-collapsible-head: 1;
+  border: 0px dotted gray;
+  padding: .2em;
+}
+
+tracks > disc:before {
+  font-weight: bold;
+  content: collapser()
+           " Disc "
+           number-field(attribute, number, data-type, int, columns, 2)
+           " (" text(attr(id)) ")";
+}
+
+disc > track {
+  content: text-field(attribute, id, columns, 5);
+  margin: .1em 2em;
+}
+
+disc > track:first-child {
+  margin-top: .5em;
+}
+
+disc > track:before {
+  display: marker;
+  content: simple-counter(n, decimal) ".";
+}

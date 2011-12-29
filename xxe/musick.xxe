@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration name="Musick"
+  xmlns="http://www.xmlmind.com/xmleditor/schema/configuration">
+
+  <detect>
+    <and>
+      <rootElementLocalName>album</rootElementLocalName>
+      <rootElementNamespace>http://hashtable.de/ns/musick</rootElementNamespace>
+    </and>
+  </detect>
+
+  <relaxng location="musick.rng" name="http://hashtable.de/ns/musick"/>
+
+  <css name="Musick" location="css/musick.css" />
+
+  <template name="Album" location="album.xml" />
+
+  <saveOptions favorInteroperability="false"/>
+  <saveOptions addOpenLines="false"/>
+  <saveOptions maxLineLength="10000000"/>
+
+</configuration>
