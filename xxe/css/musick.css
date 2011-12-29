@@ -85,3 +85,12 @@ disc > track:before {
   display: marker;
   content: simple-counter(n, decimal) ".";
 }
+
+comment {
+  font-size: 90%;
+}
+
+album > composer {
+  font-size: 110%;
+  font-weight: bold;
+}
