@@ -12,6 +12,7 @@
   <relaxng location="musick.rng" name="http://hashtable.de/ns/musick"/>
 
   <css name="Musick" location="css/musick.css" />
+  <css name="Tracks" location="css/tracks.css" />
 
   <template name="Album" location="album.xml" />
 

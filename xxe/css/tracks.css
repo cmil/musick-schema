@@ -1,0 +1,23 @@
+@namespace m "http://hashtable.de/ns/musick";
+
+@import "musick.css";
+
+album > *, opus > *, part > *, item > * {
+  display: none;
+}
+
+album > title, album > tracks,
+album > item, album > opus, album > part,
+opus > part, part > part {
+  display: block;
+}
+
+opus:before, part:before, album > item:before {
+  content: text-field(attribute, track, columns, 5) " " xpath("./m:title");
+  color: black;
+}
+
+opus[track]:before, part[track]:before, item[track]:before {
+  color: black;
+  font-weight: bold;
+}
