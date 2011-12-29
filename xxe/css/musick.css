@@ -36,6 +36,10 @@ opus > title {
   font-size: 130%;
 }
 
+item > title {
+  font-weight: normal;
+}
+
 opus {
   margin: 1em 0;
 }

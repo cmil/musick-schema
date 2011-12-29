@@ -29,9 +29,17 @@
           <ref name="genre"/>
         </optional>
       </interleave>
-      <oneOrMore>
-        <ref name="opus"/>
-      </oneOrMore>
+      <interleave>
+        <oneOrMore>
+          <ref name="opus"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <element name="item">
+            <attribute name="track"/>
+            <ref name="title"/>
+          </element>
+        </zeroOrMore>
+      </interleave>
       <ref name="tracks"/>
     </element>
   </define>
