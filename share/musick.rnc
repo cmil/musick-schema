@@ -11,7 +11,11 @@ album =
      & comment*
      & composer?
      & genre?),
-    opus+,
+    (opus+
+     & element item {
+         attribute track { text },
+         title
+       }*),
     tracks
   }
 opus =
@@ -30,7 +34,7 @@ opus-content =
 part =
   element part {
     attribute track { text }?,
-    (title & artist-elements* & comment*),
+    (title & artist-elements* & composer? & comment*),
     part*
   }
 tracks = element tracks { disc+ }

@@ -89,6 +89,9 @@
         <zeroOrMore>
           <ref name="artist-elements"/>
         </zeroOrMore>
+        <optional>
+          <ref name="composer"/>
+        </optional>
         <zeroOrMore>
           <ref name="comment"/>
         </zeroOrMore>
