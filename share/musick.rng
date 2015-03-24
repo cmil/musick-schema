@@ -138,6 +138,9 @@
 
   <define name="title">
     <element name="title">
+      <optional>
+        <attribute name="sort"/>
+      </optional>
       <text/>
     </element>
   </define>

@@ -49,7 +49,11 @@ track =
     attribute number { text }?,
     attribute length { text }?
   }
-title = element title { text }
+title =
+  element title {
+    attribute sort { text }?,
+    text
+  }
 year = element year { text }
 label = element label { text }
 composer = element composer { text }
