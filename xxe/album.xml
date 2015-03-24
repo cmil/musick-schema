@@ -4,17 +4,10 @@
   <year></year>
   <label></label>
   <artist></artist>
-
   <opus>
     <title></title>
     <part>
       <title></title>
     </part>
   </opus>
-
-  <tracks>
-    <disc number="1">
-      <track id="01-01" number="1"/>
-    </disc>
-  </tracks>
 </album>

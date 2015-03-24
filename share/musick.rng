@@ -40,7 +40,6 @@
           </element>
         </zeroOrMore>
       </interleave>
-      <ref name="tracks"/>
     </element>
   </define>
 
@@ -99,43 +98,6 @@
       <zeroOrMore>
         <ref name="part"/>
       </zeroOrMore>
-    </element>
-  </define>
-
-  <define name="tracks">
-    <element name="tracks">
-      <oneOrMore>
-        <ref name="disc"/>
-      </oneOrMore>
-    </element>
-  </define>
-
-  <define name="disc">
-    <element name="disc">
-      <optional>
-        <attribute name="id"/>
-      </optional>
-      <optional>
-        <attribute name="number"/>
-      </optional>
-      <optional>
-        <attribute name="tracks"/><!-- deprecated -->
-      </optional>
-      <oneOrMore>
-        <ref name="track"/>
-      </oneOrMore>
-    </element>
-  </define>
-
-  <define name="track">
-    <element name="track">
-      <attribute name="id"/>
-      <optional>
-        <attribute name="number"/>
-      </optional>
-      <optional>
-        <attribute name="length"/>
-      </optional>
     </element>
   </define>
 

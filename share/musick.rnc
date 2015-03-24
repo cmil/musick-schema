@@ -15,8 +15,7 @@ album =
      & element item {
          attribute track { text },
          title
-       }*),
-    tracks
+       }*)
   }
 opus =
   element opus {
@@ -36,22 +35,6 @@ part =
     attribute track { text }?,
     (title & artist-elements* & composer? & comment*),
     part*
-  }
-tracks = element tracks { disc+ }
-disc =
-  element disc {
-    attribute id { text }?,
-    attribute number { text }?,
-    attribute tracks { text }
-    # deprecated
-    ?,
-    track+
-  }
-track =
-  element track {
-    attribute id { text },
-    attribute number { text }?,
-    attribute length { text }?
   }
 title =
   element title {
