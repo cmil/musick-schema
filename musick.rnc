@@ -52,8 +52,28 @@ comment =
   }
 genre = element genre { text }
 artist-elements = artist | conductor | orchestra | choir | ensemble
-artist = element artist { text }
-conductor = element conductor { text }
-orchestra = element orchestra { text }
-choir = element choir { text }
-ensemble = element ensemble { text }
+artist =
+  element artist {
+    attribute albumartist { "true" }?,
+    text
+  }
+conductor =
+  element conductor {
+    attribute albumartist { "true" }?,
+    text
+  }
+orchestra =
+  element orchestra {
+    attribute albumartist { "true" }?,
+    text
+  }
+choir =
+  element choir {
+    attribute albumartist { "true" }?,
+    text
+  }
+ensemble =
+  element ensemble {
+    attribute albumartist { "true" }?,
+    text
+  }

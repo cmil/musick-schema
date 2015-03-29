@@ -161,30 +161,55 @@
 
   <define name="artist">
     <element name="artist">
+      <optional>
+        <attribute name="albumartist">
+          <value>true</value>
+        </attribute>
+      </optional>
       <text/>
     </element>
   </define>
 
   <define name="conductor">
     <element name="conductor">
+      <optional>
+        <attribute name="albumartist">
+          <value>true</value>
+        </attribute>
+      </optional>
       <text/>
     </element>
   </define>
 
   <define name="orchestra">
     <element name="orchestra">
+      <optional>
+        <attribute name="albumartist">
+          <value>true</value>
+        </attribute>
+      </optional>
       <text/>
     </element>
   </define>
 
   <define name="choir">
     <element name="choir">
+      <optional>
+        <attribute name="albumartist">
+          <value>true</value>
+        </attribute>
+      </optional>
       <text/>
     </element>
   </define>
 
   <define name="ensemble">
     <element name="ensemble">
+      <optional>
+        <attribute name="albumartist">
+          <value>true</value>
+        </attribute>
+      </optional>
       <text/>
     </element>
   </define>
