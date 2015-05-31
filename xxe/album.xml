@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <album xmlns="http://hashtable.de/ns/musick">
   <title></title>
-  <year></year>
+  <composer></composer>
+  <orchestra></orchestra>
+  <conductor></conductor>
   <label></label>
-  <artist></artist>
+  <year></year>
+  <comment></comment>
   <opus>
     <title></title>
     <part>
