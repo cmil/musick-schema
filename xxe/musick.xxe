@@ -9,7 +9,7 @@
     </and>
   </detect>
 
-  <relaxng location="musick.rng" name="http://hashtable.de/ns/musick"/>
+  <relaxng location="musick.rng"/>
 
   <css name="Musick" location="css/musick.css" />
   <css name="Tracks" location="css/tracks.css" />
