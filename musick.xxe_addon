@@ -14,4 +14,6 @@
 
   <a:abstract>Allows to author documents describing the contents of
   (classical) music albums.</a:abstract>
+
+  <a:xxeVersion>7.0+</a:xxeVersion>
 </a:addon>
