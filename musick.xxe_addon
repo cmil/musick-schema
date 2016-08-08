@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<a:addon xmlns="http://www.w3.org/1999/xhtml"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:a="http://www.xmlmind.com/xmleditor/schema/addon"
-         location="http://hashtable.de/xxe/musick_config.zip">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<a:addon location="http://hashtable.de/xxe/musick_config.zip"
+         xmlns:a="http://www.xmlmind.com/xmleditor/schema/addon">
   <a:category>
     <a:configuration />
   </a:category>
@@ -12,12 +9,9 @@
 
   <a:version>0.01</a:version>
 
-  <a:author>
-    Carsten Milling
-    <a href="mailto:cmil@hashtable.de">cmil@hashtable.de</a>
-  </a:author>
+  <a:author>Carsten Milling <a href="mailto:cmil@hashtable.de"
+  xmlns="http://www.w3.org/1999/xhtml">cmil@hashtable.de</a></a:author>
 
-  <a:abstract>
-  </a:abstract>
-
+  <a:abstract>Allows to author documents describing the contents of
+  (classical) music albums.</a:abstract>
 </a:addon>
